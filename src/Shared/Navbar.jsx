@@ -4,11 +4,11 @@ import logo from "../assets/logo.png";
 const Navbar = () => {
 
     const navItems = <>
-    <li className="font-bold uppercase text-white text-[15px]"><Link>Home</Link></li>
-    <li className="font-bold uppercase text-white text-[15px]"><Link>Add Job</Link></li>
-    <li className="font-bold uppercase text-white text-[15px]"><Link>My Posted Jobs</Link></li>
-    <li className="font-bold uppercase text-white text-[15px]"><Link>My Bids</Link></li>
-    <li className="font-bold uppercase text-white text-[15px]"><Link>Bids Request</Link></li>
+    <li className="font-bold uppercase text-white text-[15px]"><Link to='/'>Home</Link></li>
+    <li className="font-bold uppercase text-white text-[15px]"><Link to='/addjob'>Add Job</Link></li>
+    <li className="font-bold uppercase text-white text-[15px]"><Link to='/postedjob'>My Posted Jobs</Link></li>
+    <li className="font-bold uppercase text-white text-[15px]"><Link to='/bids'>My Bids</Link></li>
+    <li className="font-bold uppercase text-white text-[15px]"><Link to='/bidReq'>Bids Request</Link></li>
     </>
 
   return (
@@ -47,7 +47,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn bg-indigo-600 uppercase text-white">Login</a>
+         <Link to='/login'><button className="btn bg-indigo-600 uppercase text-white">Login</button></Link>
         </div>
       </div>
       
