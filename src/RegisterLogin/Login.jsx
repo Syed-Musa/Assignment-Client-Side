@@ -1,15 +1,55 @@
-import { Link } from "react-router-dom";
+import { useState, useContext } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Providers/AuthProviders";
 
 const Login = () => {
+  const {signInUser} = useContext(AuthContext);
+  // const navigate = useNavigate();
+  // const location = useLocation();
+  const [showPassword, setShowPassWord] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [success, setSuccess] = useState(null);
+
+  const handleLogin = e =>{
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+
+      setErrorMessage(null);
+      setSuccess(null);
+      if(password.length > 6){
+        setErrorMessage('Password should have at least 6 character');
+        return;
+      }else if(!/[A-Z]/.test(password)){
+        setErrorMessage('Password should have at least one uppercase');
+        return;
+      }
+
+      signInUser(email, password)
+      .then(result =>{
+        console.log(result.user)
+        setSuccess('Created message Successfully');
+  
+        // navigate(location?.state ? location.state : '/');
+      })
+      .catch(error =>{
+        console.error(error)
+        setErrorMessage(error.message);
+      });
+  }
+
   return (
     <div>
-      <div className="hero bg-gradient-to-r from-yellow-400 to-amber-400">
+      <div className="hero bg-gradient-to-r from-blue-800 to-sky-500">
         <div className="hero-content flex-col ">
           <div className="text-center">
             <h1 className="text-5xl font-bold uppercase text-white">Login now</h1>
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-gradient-to-r from-orange-300 to-amber-500">
-            <form className="card-body ">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-gradient-to-r from-sky-600 to-blue-800">
+            <form onSubmit={handleLogin} className="card-body ">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text font-bold uppercase text-white">Email</span>
@@ -26,13 +66,20 @@ const Login = () => {
                 <label className="label">
                   <span className="label-text font-bold uppercase text-white">Password</span>
                 </label>
+                <div className="relative">
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   name="password"
                   placeholder="password"
-                  className="input input-bordered"
+                  className="input input-bordered w-full"
                   required
                 />
+                </div>
+                <span className="absolute text-2xl top-[170px] right-10" onClick={()=>setShowPassWord(!showPassword)}>
+                  {
+                    showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+                  }
+                </span>
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover font-bold text-red-600">
                     Forgot password?
@@ -40,12 +87,18 @@ const Login = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Login</button>
+                <button className="btn btn-primary bg-gradient-to-r from-blue-600 to-sky-400">Login</button>
               </div>
               <div>
-                <p className="font-bold">Go to <Link className="text-sky-700 font-bold uppercase" to='/register'>Registration</Link> Page</p>
+                <p className="font-bold">Go to <Link className="text-white font-bold uppercase" to='/register'>Registration</Link> Page</p>
               </div>
             </form>
+            {
+              errorMessage && <p className="text-red-600 italic font-bold mb-10 text-center">{errorMessage}</p>
+            }
+            {
+              success && <p className="text-green-600 italic font-bold mb-10 text-center">{success}</p>
+            }
           </div>
         </div>
       </div>
