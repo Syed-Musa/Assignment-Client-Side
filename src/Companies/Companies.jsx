@@ -5,7 +5,7 @@ const Companies = () => {
     const [companies, setCompanies] = useState([]);
 
     useEffect(()=>{
-        fetch('company.json')
+        fetch('http://localhost:5000/companies')
         .then(res=> res.json())
         .then(data=> setCompanies(data))
     }, [])
