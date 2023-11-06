@@ -2,11 +2,12 @@ import { useState, useContext } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProviders";
+import ExtraLogin from "./ExtraLogin";
 
 const Login = () => {
   const {signInUser} = useContext(AuthContext);
-  // const navigate = useNavigate();
-  // const location = useLocation();
+  const navigate = useNavigate();
+  const location = useLocation();
   const [showPassword, setShowPassWord] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
   const [success, setSuccess] = useState(null);
@@ -33,7 +34,7 @@ const Login = () => {
         console.log(result.user)
         setSuccess('Created message Successfully');
   
-        // navigate(location?.state ? location.state : '/');
+        navigate(location?.state ? location.state : '/');
       })
       .catch(error =>{
         console.error(error)
@@ -99,6 +100,7 @@ const Login = () => {
             {
               success && <p className="text-green-600 italic font-bold mb-10 text-center">{success}</p>
             }
+            <ExtraLogin></ExtraLogin>
           </div>
         </div>
       </div>

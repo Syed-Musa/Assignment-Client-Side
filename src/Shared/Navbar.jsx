@@ -1,7 +1,16 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
+import { useContext } from "react";
+import { AuthContext } from "../Providers/AuthProviders";
 
 const Navbar = () => {
+  const {user, logOut} = useContext(AuthContext);
+
+  const handleSignOut = ()=>{
+    logOut()
+    .then()
+    .catch()
+  }
 
     const navItems = <>
     <li className="font-bold uppercase text-white text-[15px]"><Link to='/'>Home</Link></li>
@@ -32,13 +41,15 @@ const Navbar = () => {
                 />
               </svg>
             </label>
-            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-black rounded-box w-52">
               {navItems}
             </ul>
           </div>
-          <div className="flex items-center text-xl">
+          <div className=" text-xl">
+          <Link className="flex items-center" to='/'>
           <img className="w-28 h-14" src={logo} alt="" />
           <p className="font-bold uppercase italic text-white">OnlineMarkets</p>
+          </Link>
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -47,7 +58,15 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-         <Link to='/login'><button className="btn bg-indigo-600 uppercase text-white">Login</button></Link>
+        {
+          user ? <>
+            <span className="font-bold">{user?.email}</span>
+            <img className="w-4 lg:w-10 rounded-full" src={user?.photoURL} />
+            <button onClick={handleSignOut} className="btn text-white bg-gradient-to-r from-blue-600 to-sky-400">Sign Out</button>
+            </>
+            :
+          <Link to="/login"><button className="btn text-white bg-gradient-to-r from-blue-600 to-sky-400">Login</button></Link>
+        }  
         </div>
       </div>
       
