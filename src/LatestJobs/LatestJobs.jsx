@@ -4,7 +4,7 @@ const LatestJobs = ({job}) => {
     const {id, Job_title, image, deadline, price_Range} = job || {}
   return (
     <div>
-      <div className="card w-96 bg-base-100 shadow-xl">
+      <div className="card w-96 bg-base-100 my-5 shadow-xl">
         <figure className="px-10 pt-10 h-40">
           <img src={image} alt="Shoes" className="rounded-xl" />
         </figure>
