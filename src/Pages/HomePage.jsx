@@ -11,7 +11,7 @@ const HomePage = () => {
     // const jobs = useLoaderData();
 
     return (
-        <div>
+        <div className="max-w-7xl mx-auto">
             {/* <ReactTabs></ReactTabs> */}
             
             <Banner></Banner>

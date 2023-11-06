@@ -37,7 +37,7 @@ const ExtraLogin = () => {
     const handleGoogleSignOut = () =>{
         signOut(auth)
         .then(result => {
-            console.log(result)
+            console.log(result?.user)
             setUser(null);
         })
         .catch(error => {

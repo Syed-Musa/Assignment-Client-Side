@@ -43,7 +43,7 @@ const Login = () => {
   }
 
   return (
-    <div>
+    <div className="max-w-7xl mx-auto">
       <div className="hero bg-gradient-to-r from-blue-800 to-sky-500">
         <div className="hero-content flex-col ">
           <div className="text-center">

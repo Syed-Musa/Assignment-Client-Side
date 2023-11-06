@@ -8,16 +8,24 @@ import BidReq from "../Pages/bidReq";
 import Register from "../RegisterLogin/Register";
 import Login from "../RegisterLogin/Login";
 import PrivateRoutes from "./PrivateRoutes";
+import ErrorPage from "../ErrorPage/ErrorPage";
+// import JobsDtl from "../LatestJobs/JobsDtl";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Main></Main>,
+      errorElement: <ErrorPage></ErrorPage>,
       children: [
         {
           path: '/',
           element: <HomePage></HomePage>
         },
+        // {
+        //   path: '/details/:id',
+        //   element: <JobsDtl></JobsDtl>,
+        //   loader: ({params})=> fetch(`http://localhost:5000/jobs/${params.id}`)
+        // },
         {
           path: '/addjob',
           element: <PrivateRoutes><AddJobs></AddJobs></PrivateRoutes>

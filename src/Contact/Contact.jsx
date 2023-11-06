@@ -4,7 +4,7 @@ import { ImLocation } from 'react-icons/im';
 
 const Contact = () => {
     return (
-        <div>
+        <div className='mx-auto max-w-7xl'>
             <h2 className='text-5xl text-emerald-900 italic font-bold text-center uppercase'>Contact Us</h2>
             <div className='bg-gradient-to-r from-blue-600 to-sky-400 text-white p-14 flex lg:flex-row flex-col justify-center items-center gap-10 my-14'>
             <div>

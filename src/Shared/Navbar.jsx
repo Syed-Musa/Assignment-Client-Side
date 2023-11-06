@@ -13,11 +13,11 @@ const Navbar = () => {
   }
 
     const navItems = <>
-    <li className="font-bold uppercase text-white text-[15px]"><Link to='/'>Home</Link></li>
-    <li className="font-bold uppercase text-white text-[15px]"><Link to='/addjob'>Add Job</Link></li>
-    <li className="font-bold uppercase text-white text-[15px]"><Link to='/postedjob'>My Posted Jobs</Link></li>
-    <li className="font-bold uppercase text-white text-[15px]"><Link to='/bids'>My Bids</Link></li>
-    <li className="font-bold uppercase text-white text-[15px]"><Link to='/bidReq'>Bids Request</Link></li>
+    <li className="font-bold uppercase text-white text-[15px] italic"><Link to='/'>Home</Link></li>
+    <li className="font-bold uppercase text-white text-[15px] italic"><Link to='/addjob'>Add Job</Link></li>
+    <li className="font-bold uppercase text-white text-[15px] italic"><Link to='/postedjob'>My Posted Jobs</Link></li>
+    <li className="font-bold uppercase text-white text-[15px] italic"><Link to='/bids'>My Bids</Link></li>
+    <li className="font-bold uppercase text-white text-[15px] italic"><Link to='/bidReq'>Bids Request</Link></li>
     </>
 
   return (
@@ -62,10 +62,10 @@ const Navbar = () => {
           user ? <>
             <span className="font-bold">{user?.email}</span>
             <img className="w-4 lg:w-10 rounded-full" src={user?.photoURL} />
-            <button onClick={handleSignOut} className="btn text-white bg-gradient-to-r from-blue-600 to-sky-400">Sign Out</button>
+            <button onClick={handleSignOut} className="btn text-white bg-gradient-to-r from-blue-600 to-sky-400 italic">Sign Out</button>
             </>
             :
-          <Link to="/login"><button className="btn text-white bg-gradient-to-r from-blue-600 to-sky-400">Login</button></Link>
+          <Link to="/login"><button className="btn text-white bg-gradient-to-r from-blue-600 to-sky-400 italic">Login</button></Link>
         }  
         </div>
       </div>
