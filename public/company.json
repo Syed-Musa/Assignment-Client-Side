@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "image": "https://i.ibb.co/rmqxb70/download.jpg",
+        "title": "Programming Hero",
+        "address": "Level-04,Awal Center,Banani,Dhaka"
+    },
+    {
+        "id": 2,
+        "image": "https://i.ibb.co/Cz1rTQR/download-1.jpg",
+        "title": "Creative IT Institute",
+        "address": "Road # 04, Dhanmondi, Dhaka-1205"
+    },
+    {
+        "id": 3,
+        "image": "https://i.ibb.co/7JzVb8C/download-2.jpg",
+        "title": "Advance IT BD",
+        "address": "110/1/1, North Mugda, 1214-Dhaka"
+    }
+]

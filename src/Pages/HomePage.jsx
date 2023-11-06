@@ -2,6 +2,7 @@
 
 // import { useLoaderData } from "react-router-dom";
 import Banner from "../Banner/Banner";
+import Companies from "../Companies/Companies";
 import Contact from "../Contact/Contact";
 import Jobs from "../LatestJobs/Jobs";
 
@@ -16,6 +17,7 @@ const HomePage = () => {
             <Banner></Banner>
             <Jobs></Jobs>
             <Contact></Contact>
+            <Companies></Companies>
         </div>
     );
 };
