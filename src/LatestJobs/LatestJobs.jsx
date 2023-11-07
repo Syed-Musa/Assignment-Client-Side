@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const LatestJobs = ({job}) => {
     const {_id, Job_title, category, image, deadline, price_Range, short_description} = job || {}
+    console.log(_id)
   return (
     <div>
       <div className="card w-96 bg-base-100 my-5 shadow-xl">
@@ -17,7 +18,7 @@ const LatestJobs = ({job}) => {
           <p className="font-bold ">Price: <span>{price_Range}</span></p>
           <p className="font-bold ">Description: <span className="text-gray-500">{short_description}</span></p>
           <div className="card-actions">
-            <Link to={`/details/${_id}`}>
+            <Link to={`/jobs/${_id}`}>
             <button className="btn bg-white text-white hover:bg-green-800">Bid Now <BsArrowRight className="text-2xl"></BsArrowRight></button>
             </Link>
           </div>

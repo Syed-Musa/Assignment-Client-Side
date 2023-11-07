@@ -9,7 +9,7 @@ import Register from "../RegisterLogin/Register";
 import Login from "../RegisterLogin/Login";
 import PrivateRoutes from "./PrivateRoutes";
 import ErrorPage from "../ErrorPage/ErrorPage";
-// import JobsDtl from "../LatestJobs/JobsDtl";
+import JobsDtl from "../LatestJobs/JobsDtl";
 
 const router = createBrowserRouter([
     {
@@ -21,11 +21,12 @@ const router = createBrowserRouter([
           path: '/',
           element: <HomePage></HomePage>
         },
-        // {
-        //   path: '/details/:id',
-        //   element: <JobsDtl></JobsDtl>,
-        //   loader: ({params})=> fetch(`http://localhost:5000/jobs/${params.id}`)
-        // },
+        {
+          path: '/jobs/:_id',
+          element: <JobsDtl></JobsDtl>,
+          // loader: ()=> fetch(`http://localhost:5000/jobs/:id`)
+          loader: () => fetch('http://localhost:5000/jobs')
+        },
         {
           path: '/addjob',
           element: <PrivateRoutes><AddJobs></AddJobs></PrivateRoutes>

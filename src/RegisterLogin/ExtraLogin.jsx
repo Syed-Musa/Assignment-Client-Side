@@ -1,4 +1,4 @@
-import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup, signOut } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import { useState } from "react";
 import app from "../Firebase/Firebase.config";
 import { FaGoogle, FaGithub } from 'react-icons/fa';
@@ -34,32 +34,16 @@ const ExtraLogin = () => {
         })
     };
 
-    const handleGoogleSignOut = () =>{
-        signOut(auth)
-        .then(result => {
-            console.log(result?.user)
-            setUser(null);
-        })
-        .catch(error => {
-            console.log(error)
-        })
-    }
-
     return (
         <div>
             <h2 className='text-2xl text-white font-bold my-5 text-center'>Continue With</h2>
-            {
-                user ? <button onClick={handleGoogleSignOut} className='btn btn-outline text-white w-full text-[15px] font-bold'>Google LogOut<FaGoogle className='text-xl text-white'></FaGoogle></button> :   
-                <>
-                    <button onClick={handleGoogleSignIn} className='btn btn-outline text-white w-full text-[15px] font-bold my-2'>
-                        <FaGoogle className='text-xl text-white'></FaGoogle>Google Login
-                    </button>
-                    
-                </>
-            }
+                
+            <button onClick={handleGoogleSignIn} className='btn btn-outline text-white w-full text-[15px] font-bold my-2'>
+            <FaGoogle className='text-xl text-white'></FaGoogle>Google Login
+            </button>
             
             <button onClick={handleGithubSignIn} className='btn btn-outline text-white w-full text-[15px] font-bold'>
-                <FaGithub className='text-xl text-white'></FaGithub>Github Login
+            <FaGithub className='text-xl text-white'></FaGithub>Github Login
             </button>
         </div>
         
