@@ -5,6 +5,7 @@ import Banner from "../Banner/Banner";
 import Companies from "../Companies/Companies";
 import Contact from "../Contact/Contact";
 import Jobs from "../LatestJobs/Jobs";
+// import ReactTabs from "../Tabs/ReactTabs";
 
 const HomePage = () => {
 

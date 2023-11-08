@@ -2,7 +2,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Providers/AuthProviders";
 import { useLoaderData, useParams } from "react-router-dom";
-import Swal from "sweetalert2";
+
 
 const PostedJobs = ({post}) => {
 
@@ -52,7 +52,6 @@ const PostedJobs = ({post}) => {
             Description:{" "}
             <span className="text-gray-500">{short_description}</span>
           </p>
-          <button onClick={()=> handleDelete(_id)} className="btn bg-red-600 font-bold text-white">X</button>
           
         </div>
       </div>
