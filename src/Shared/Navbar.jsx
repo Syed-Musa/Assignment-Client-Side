@@ -16,7 +16,7 @@ const Navbar = () => {
     <li className="font-bold uppercase text-white text-[15px] italic"><Link to='/'>Home</Link></li>
     <li className="font-bold uppercase text-white text-[15px] italic"><Link to='/addjob'>Add Job</Link></li>
     <li className="font-bold uppercase text-white text-[15px] italic"><Link to='/postedjob'>My Posted Jobs</Link></li>
-    {/* <li className="font-bold uppercase text-white text-[15px] italic"><Link to='/bids'>My Bids</Link></li> */}
+    <li className="font-bold uppercase text-white text-[15px] italic"><Link to='/bids'>My Bids</Link></li>
     <li className="font-bold uppercase text-white text-[15px] italic"><Link to='/bidReq'>Bids Request</Link></li>
     </>
 
