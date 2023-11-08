@@ -24,7 +24,7 @@ const router = createBrowserRouter([
         {
           path: '/jobs/:_id',
           element: <JobsDtl></JobsDtl>,
-          loader: () => fetch('http://localhost:5000/jobs')
+          loader: () => fetch('https://assignment-server-side-xi.vercel.app/jobs')
         },
         {
           path: '/addjob',

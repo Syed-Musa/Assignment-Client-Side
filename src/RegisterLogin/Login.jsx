@@ -37,7 +37,7 @@ const Login = () => {
         const user = {email};
         setSuccess('Created message Successfully');
   
-        axios.post('http://localhost:5000/jwt', user, {withCredentials: true})
+        axios.post('https://assignment-server-side-xi.vercel.app/jwt', user, {withCredentials: true})
         .then(res => {
           console.log(res.data)
           if(res.data.success){
@@ -52,7 +52,7 @@ const Login = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto"  data-aos="flip-left" data-aos-easing="linear" data-aos-duration="1000">
       <div className="hero bg-gradient-to-r from-sky-500 to-pink-500">
         <div className="hero-content flex-col ">
           <div className="text-center">

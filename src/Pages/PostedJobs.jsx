@@ -16,7 +16,7 @@ const PostedJobs = ({post}) => {
 
 
   useEffect(()=>{
-    fetch('http://localhost:5000/postedjob')
+    fetch('https://assignment-server-side-xi.vercel.app/postedjob')
     .then(res => res.json())
     .then(data => setPostedData(data));
   }, [])
@@ -27,7 +27,7 @@ const PostedJobs = ({post}) => {
   }, [_id, data]);
 
   return (
-    <div>
+    <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
       <p className="font-normal text-gray-700 dark:text-gray-400">
         <span className="font-bold">Your Email:</span> {user?.email}
       </p>

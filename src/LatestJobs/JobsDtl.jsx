@@ -58,7 +58,7 @@ const JobsDtl = () => {
   }, [_id, data]);
 
   return (
-    <div >
+    <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
       <div>
         {job ?
         <div className="card w-96 bg-base-100 shadow-xl">

@@ -1,7 +1,7 @@
 
 const Banner = () => {
     return (
-        <div className="max-w-7xl mx-auto ">
+        <div className="max-w-7xl mx-auto" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
             <div className="h-[400px] lg:h-[600px] bg-cover bg-[url('https://i.ibb.co/cLpKYK5/banner.jpg')]">
                 <div className="hero-overlay opacity-50 ">
                 <h2 className="text-2xl lg:text-6xl font-bold italic text-white pt-40 pl-16">Technology Development & <br />MarketPlaces</h2>

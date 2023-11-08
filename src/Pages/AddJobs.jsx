@@ -15,7 +15,7 @@ const AddJobs = () => {
     const newJobs = { name, date, price, price2, photo, description };
     console.log(newJobs);
 
-    fetch('http://localhost:5000/jobs', {
+    fetch('https://assignment-server-side-xi.vercel.app/jobs', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
@@ -38,9 +38,7 @@ const AddJobs = () => {
   };
 
   return (
-    <div>
-      <h2>This is addjobs section</h2>
-
+    <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
       <div className=" bg-[#F4F3F0] p-20">
         <h1 className="text-5xl font-bold uppercase text-center text-emerald-900 italic mb-5">
           Please Add Jobs

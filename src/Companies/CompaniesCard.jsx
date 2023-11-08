@@ -5,7 +5,7 @@ const CompaniesCard = ({ company }) => {
   const { id, title, image, address } = company || {};
 
   return (
-    <div>
+    <div data-aos="zoom-in-up" data-aos-easing="linear" data-aos-duration="1000">
       <div className="card w-96 bg-base-100 shadow-xl">
         <figure className="pt-10">
           <img className="w-full h-60 rounded-xl" src={image} alt="Shoes" />

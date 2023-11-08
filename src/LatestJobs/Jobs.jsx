@@ -6,7 +6,7 @@ import axios from "axios";
 const Jobs = () => {
     const [jobs, setJobs] = useState([]);
 
-    const url = 'http://localhost:5000/jobs';
+    const url = 'https://assignment-server-side-xi.vercel.app/jobs';
     useEffect(()=>{
         axios.get(url, {withCredentials: true})
         .then(res => {

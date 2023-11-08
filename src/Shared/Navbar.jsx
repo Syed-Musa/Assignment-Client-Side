@@ -21,7 +21,8 @@ const Navbar = () => {
     </>
 
   return (
-    <div className="my-10">
+    <div className="my-10" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+
       <div className="navbar bg-gradient-to-r from-blue-400 to-indigo-400">
         <div className="navbar-start">
           <div className="dropdown">

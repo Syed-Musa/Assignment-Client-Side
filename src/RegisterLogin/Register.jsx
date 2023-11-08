@@ -42,7 +42,7 @@ const Register = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto " data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
       <div className="hero bg-gradient-to-r from-yellow-500 to-blue-500">
         <div className="hero-content flex-col ">
           <div className="text-center lg:text-left">
