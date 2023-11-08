@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const LatestJobs = ({job}) => {
     const {_id, Job_title, category, image, deadline, price_Range, short_description} = job || {}
-    console.log(_id)
+    
   return (
     <div>
       <div className="card w-96 bg-base-100 my-5 shadow-xl">

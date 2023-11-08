@@ -1,14 +1,18 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import LatestJobs from "./LatestJobs";
+import axios from "axios";
 
 const Jobs = () => {
     const [jobs, setJobs] = useState([]);
 
+    const url = 'http://localhost:5000/jobs';
     useEffect(()=>{
-        fetch('http://localhost:5000/jobs')
-        .then(res => res.json())
-        .then(data => setJobs(data));
+        axios.get(url, {withCredentials: true})
+        .then(res => {
+            setJobs(res.data);
+        })
+        
     }, [])
 
     return (

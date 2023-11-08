@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProviders";
 import axios from "axios";
-import Swal from "sweetalert2/src/sweetalert2.js";
+import Swal from "sweetalert2";
 
 const JobsDtl = () => {
   const { user } = useContext(AuthContext);

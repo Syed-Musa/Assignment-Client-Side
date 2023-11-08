@@ -3,6 +3,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProviders";
 import ExtraLogin from "./ExtraLogin";
+import axios from "axios";
 
 const Login = () => {
   const {signInUser} = useContext(AuthContext);
@@ -31,10 +32,18 @@ const Login = () => {
 
       signInUser(email, password)
       .then(result =>{
-        console.log(result.user)
+        const loggedInUser = result.user;
+        console.log(loggedInUser);
+        const user = {email};
         setSuccess('Created message Successfully');
   
-        navigate(location?.state ? location.state : '/');
+        axios.post('http://localhost:5000/jwt', user, {withCredentials: true})
+        .then(res => {
+          console.log(res.data)
+          if(res.data.success){
+            navigate(location?.state ? location.state : '/');
+          }
+        })
       })
       .catch(error =>{
         console.error(error)
