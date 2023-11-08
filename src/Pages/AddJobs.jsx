@@ -42,7 +42,7 @@ const AddJobs = () => {
       <h2>This is addjobs section</h2>
 
       <div className=" bg-[#F4F3F0] p-20">
-        <h1 className="text-5xl font-bold uppercase text-center text-emerald-900 italic">
+        <h1 className="text-5xl font-bold uppercase text-center text-emerald-900 italic mb-5">
           Please Add Jobs
         </h1>
         <form onSubmit={handleAddJobs}>
@@ -97,18 +97,7 @@ const AddJobs = () => {
               />
             </div>
 
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text text-gray-500 font-bold uppercase">Short Description</span>
-              </label>
-              <input
-                type="text"
-                placeholder="description"
-                name="description"
-                className="input input-bordered w-full"
-                required
-              />
-            </div>
+            
 
             <div className="form-control">
               <label className="label">
@@ -136,6 +125,11 @@ const AddJobs = () => {
               />
             </div>
           </div>
+
+          <div className="form-control">
+            <p>Short Description</p>
+            <textarea name="" className="border-2" cols="30" rows="10"></textarea>
+            </div>
 
           <input
             type="submit"

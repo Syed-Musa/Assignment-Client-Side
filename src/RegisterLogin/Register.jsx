@@ -43,13 +43,13 @@ const Register = () => {
 
   return (
     <div className="max-w-7xl mx-auto">
-      <div className="hero bg-gradient-to-r from-gray-500 to-slate-600">
+      <div className="hero bg-gradient-to-r from-yellow-500 to-blue-500">
         <div className="hero-content flex-col ">
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold text-white uppercase">Registration Now</h1>
             
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-gradient-to-r from-gray-600 to-slate-800">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl ">
             <form onSubmit={handleRegistration} className="card-body">
               <div className="form-control">
                 <label className="label">
@@ -115,7 +115,7 @@ const Register = () => {
                 />
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary bg-gradient-to-r from-slate-400 to-gray-500">Registration</button>
+                <button className="btn btn-primary bg-gradient-to-r from-yellow-500 to-blue-500">Registration</button>
               </div>
               <div className="text-center">
                 <p className="font-bold">Its <Link className="text-sky-600 font-bold uppercase" to='/login'>Login</Link> Page</p>

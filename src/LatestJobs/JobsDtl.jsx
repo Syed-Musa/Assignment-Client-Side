@@ -58,7 +58,7 @@ const JobsDtl = () => {
   }, [_id, data]);
 
   return (
-    <div>
+    <div >
       <div>
         {job ?
         <div className="card w-96 bg-base-100 shadow-xl">
@@ -150,7 +150,7 @@ const JobsDtl = () => {
             type="submit"
             className="w-full bg-blue-500 text-white p-2 rounded hover-bg-blue-700 focus:outline-none"
           >
-            Add Job
+            Bid Now
           </button>
         </form>
       </div>

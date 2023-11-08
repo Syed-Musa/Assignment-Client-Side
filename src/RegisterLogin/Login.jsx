@@ -53,12 +53,12 @@ const Login = () => {
 
   return (
     <div className="max-w-7xl mx-auto">
-      <div className="hero bg-gradient-to-r from-blue-800 to-sky-500">
+      <div className="hero bg-gradient-to-r from-sky-500 to-pink-500">
         <div className="hero-content flex-col ">
           <div className="text-center">
             <h1 className="text-5xl font-bold uppercase text-white">Login now</h1>
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-gradient-to-r from-sky-600 to-blue-800">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl ">
             <form onSubmit={handleLogin} className="card-body ">
               <div className="form-control">
                 <label className="label">
@@ -97,7 +97,7 @@ const Login = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary bg-gradient-to-r from-blue-600 to-sky-400">Login</button>
+                <button className="btn btn-primary bg-gradient-to-r from-sky-500 to-pink-500">Login</button>
               </div>
               <div>
                 <p className="font-bold">Go to <Link className="text-white font-bold uppercase" to='/register'>Registration</Link> Page</p>
